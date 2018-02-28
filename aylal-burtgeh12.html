@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>ATFMS</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Preview page of Metronic Admin Theme #1 for bootstrap date, datetime and daterange pickers" name="description" />
+    <meta content="" name="author" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/jquery-multi-select/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-editable/bootstrap-editable/css/bootstrap-editable.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/clockface/css/clockface.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/jquery-multi-select/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
+    <link href="../assets/layouts/layout/css/layout.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/layouts/layout/css/themes/darkblue.min.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="../assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" href="favicon.ico" /> </head>
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo">
+    <div class="page-wrapper">
+        <div class="clearfix"></div>
+        <div class="page-container">
+            <div class="page-content-wrapper">
+                <div class="page-content ">
+                    <div class="page-header navbar navbar-fixed-top">
+                        <div class="page-header-iner ">
+                            <div class="">
+                                <div class="page-logo">
+                                    <a href="index.html">
+                                        <i class="fa fa-plane"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END HEADER INNER -->
+                    </div>
+                    <div class="overplay"></div>
+                    <div class="row order">
+                        <div class="col-md-2 menu-of-guide col-sm-12">
+                            <div id="userguide">
+                                <ul>
+                                    <li>
+                                        <a class="disabled">1. Нислэг захиалга</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#orderlist">1.1 Захиалгын жагсаалт</a>
+                                            </li>
+                                            <li>
+                                                <a href="#order">1.2 Захиалга бүргэх</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="disabled">2. Аялал төлөвлөх</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#plantravel">2.1 Аялал төлөвлөх</a>
+                                            </li>
+                                            <li>
+                                                <a href="#planorder">2.2 Захиалгаар төлөвлөх</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a class="disabled">3. Зөвшөөрөл олгох</a>
+                                        <ul>
+                                            <li>
+                                                <a href="#accepttravel">3.1 Аялалд олгох</a>
+                                            </li>
+                                            <li>
+                                                <a href="#acceptorder">3.2 Захиалгад олгох</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#listflight">4. Нислэгийн жагсаалт</a>
+                                    </li>
+                                    <li>
+                                        <a href="#aftn">5. AFTN</a>
+                                    </li>
+                                    <li>
+                                        <a href="#flights">5. Гүйцэтгэл</a>
+                                    </li>
+                                    <li>
+                                        <a href="#invoices">5. Нэхэмжлэл</a>
+                                    </li>
+                                    <li>
+                                        <a href="#strip">5. Cтрип тулгалт</a>
+                                    </li>
+                                    <li>
+                                        <a href="#reports">5. Тайлан</a>
+                                    </li>
+                                    <li>
+                                        <a href="#notifications">5. Мэдээлэл</a>
+                                    </li>
+                                    <li>
+                                        <a href="#aftn">5. Тохиргоо</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-10 content-of-guide">
+                            <section>
+                                <label for="">Ерөнхий</label>
+                                <p></p>
+                            </section>
+                            <section id="orderlist">
+                                <label>1.1 Захиалгын жагсаалт</label>
+                                <img src="orderlist.jpg" alt="">
+                                <p>
+                                    <span class="number">1</span>
+                                    <span class="title-user-guide">Захиалгын жагсаалт</span>
+                                    <p class="details-post">
+                                        Бүртгэгдсэн захиалгын жагсаалт харагдана. Захиалгыг төрлөөр нь /Тогтмол, Тогтмолын нэмэгдэл, Цагийн хуваарийн бус/ 3 ангилна. Тогтмол захиалга <i class="fa fa-square white"></i> , Тогтмолын нэмэгдэл <i class="fa fa-square  yellow"></i> , Цагийн хуваарийн бус нь <i class="fa fa-square  pink"></i> дэвсгэр өнгүүдтэй байна. Тухайн нэг захиалгыг засахдаа
+                                    <span class="glyphicon glyphicon-edit icon"></span> товчийг даран захиалга бүртгэлийн цонхноос бүртгэгдсэн байгаа мэдээллийг өөрчлөн хадгална. 
+                                    </p>
+                                </p>
+                                <p>
+                                    <span class="number">2</span>
+                                    <span class="title-user-guide">Түүвэрлэлт</span> 
+                                    <p class="details-post">
+                                        Захиалгын жагсаалтаас захиалгын дугаар, авиа компани болон хугацааны интервалаыг оруулан <i class="fa fa-search icon"></i> товчийг даран түүвэрлэнэ. <i class="fa fa-close icon"></i> товчийг даран түүвэрлэлт болон ангиллыг болиулан үндсэн захиалгын жагсаалтыг харуулна.
+                                    </p>
+                                </p>
+                                <p>
+                                    <span class="number">3</span> 
+                                    <span class="title-user-guide">Ангилах болон захиалга шинээр нэмэх</span> 
+                                    
+                                </p>
+                                <div class="details">
+                                    <div class="form-inline searchbycheck">
+                                        <div class="form-group">
+                                            <a class="filter_by_status"><i class="fa fa-clone Ordericon"></i>
+                                                <label> Тогтмол </label>
+                                            </a>
+                                        </div>
+                                        <div class="form-group ">
+                                            <a class="filter_by_status"><i class="fa fa-clone Plannedicon"></i>
+                                                <label> Тогтмолын нэмэгдэл </label>
+                                            </a>
+                                        </div>
+                                        <div class="form-group">
+                                            <a class="filter_by_status"><i class="fa fa-clone Erroricon"></i>
+                                                <label> Цагийн хуваарийн бус </label>
+                                            </a>
+                                        </div>
+                                        <div class="form-group">
+                                            <a class="filter_by_status"><i class="fa fa-clone"></i>
+                                                <label> Бүгд </label>
+                                            </a>
+                                        </div>
+                                        <div class="form-group">
+                                            <p> Эдгээр 3 төрлөөр ангилан харуулна.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-default disabled"><i class="fa fa-plus"></i> Шинээр нэмэх</a>
+                                <p>Товчийг дарж шинээр захиалга бүртгэх цонхруу шилжинэ.</p>
+                            </section>
+                            <section id="order">
+                                <label>1.2 Захиалга бүртгэл</label>
+                                <img src="order.jpg" alt="">
+                                <p>
+                                    <span class="number">1</span>
+                                    <span class="title-user-guide">Захиалгын бүртгэл</span>
+                                    <p class="details-post">
+                                        Захиалгын бүргэлийг бөглөж дуусаад хадгалсны дараа Аялал бүртгэлийн хэсэг гарч ирнэ. Нэг захиалга дотор хэчнээн ч аялал бүртгэх боломжтой.</p>
+                                </p>
+                                <p>
+                                    <span class="number">2</span>
+                                    <span class="title-user-guide">Аялал бүртгэл</span>
+                                    <p class="details-post">
+                                        1. Агаарын хөлгийн маягыг сонгоход тухайн хөлгийн ашигтай өндөр нь нисэх эшелон талбарын ард автоматаар харагдах ба нэгж сонгосны дараа нисэх эшелон талбарт уг өндөртэй ойролцоо өндрийг сонгоно. Хэрвээ бүртгэх гэж байгаа агаарын хөлгийн маяг байхгүй бол Тохиргоо цэсний Агаарын хөлгий маяг дэд цэрүү орон тухайн агаарын хөлгийн маягийг шинээр бүртгэнэ. 
+                                    </p>
+                                    <p class="details-post">
+                                        2.Тоноглол талбарт тухайн агаарын хөлгийн тоноглолоуудыг сонгон оруулна. Бүртгэх гэж байгаа тоноглол байхгүй бол Тохиргоо цэсний Тоноглол дэд цэсрүү орон шинээр бүртгэнэ.
+                                    </p>
+                                    <p class="details-post">
+                                         3. Аяллыг Маршрут болон Цэгээр гэсэн 2 аргаар бүртгэж болно. 
+                                         <div class="col-md-12">
+                                             <div class="col-md-6">
+                                                <h5>Маршрутаар бүртгэх</h5>
+                                                <img src="marshrut.jpg" alt="">
+                                                <p>Маршрутыг сонгон эхний цэгийн цагийг оруулахад хөлгийн хурд цэгүүдийн хоорондох зайнаас хамааран дараагийн цэгүүдэд хүрэх цаг автомтаар бодогдож орно.</p>
+                                            </div>
+                                             <div class="col-md-6">
+                                                <h5>Цэгээр бүртгэх</h5>
+                                                <img src="point.jpg" alt="">
+                                            </div>
+                                         </div>
+                                         <div class="col-md-12">
+                                             <div class="col-md-6">
+                                                
+                                                <img src="weeks.jpg" alt="">
+                                                <p>
+                                                    Тухайн аялал доторх нислэгийн өдрүүдийг сонгохдоо өдрөөр болон гарагаар сонгож болно. 
+                                                    <li class="black">
+                                                        Өдрөөр сонгох: аялал эхлэх болон дуусах хугацааны хооронд календер дээрээс огноог сонгоно.
+                                                    </li>
+                                                    <li class="black">
+                                                       Гарагаар сонгох: Нислэг үйлдэх гарагуудыг сонгоно ингэснээр аялал эхлэх болон дуусах хугацааны хооронд сонгосон гарагуудын огноо автоматаар нэмэгдэгдэнэ.
+
+                                                    </li> 
+                                                </p>
+                                            </div>
+                                             <div class="col-md-6">
+                                                
+                                                <img src="list.jpg" alt="">
+                                                <p>Нислэг үйлдэх өдрүүдийн жагсаалт</p>
+                                            </div>
+                                         </div>    
+                                         
+                                    </p>
+                                </p>
+                                <p>
+                                    <span class="number">3</span>
+                                    <span class="title-user-guide">Аяллын жагсаалт</span>
+                                    <p class="details-post">Тухайн захиалга дотор бүртгэгдсэн аяллуудын жагсаалт харагданэ.</p>
+                                </p>
+                                <p>
+                                    <span class="number">4</span>
+                                    <a class="btn btn-default disabled other"><i class="fa fa-list"></i> Захиалгын жагсаалт</a> товчийг даран бүртгэгдсэн байгаа захиалгын жагсаалтыг харна.
+                                </p>
+                            </section>
+                            <section id="plantravel">
+                                <label>2.1 Аялал төлөвлөх</label>
+                                <img src="aylal-tolovloh.jpg" alt="">
+                                <p>
+                                    <span class="number">1</span>
+                                    <span class="title-user-guide">Аяллын жагсаалт</span>
+                                    <p class="details-post">
+                                        Бүртгэгдсэн аяллуудын жагсаалт харагдана. Төлөвлөгдсөн аялал <i class="fa fa-square  white"></i> , төлөвлөгдөөгүй аялал <i class="fa fa-square  yellow"></i> дэвсгэр өнгүүдтэй байна. Төлөвлөөгүй аяллыг төлөвлөх точийг даран төлөвлөнө. Тухайн нэг аяллыг засахдаа<span class="glyphicon glyphicon-edit icon"></span> товчийг даран аялал бүртгэлийн цонхноос бүртгэгдсэн байгаа мэдээллийг өөрчлөн засаж хадгална. Зассан аяллыг дахин төлвөлөх шаардлагатай.</p>  
+                                </p>
+                                
+                                <p>
+                                    <span class="number">2</span>
+                                    <span class="title-user-guide">Түүвэрлэлт</span>
+                                    <p class="details-post">
+                                        Аяллын жагсаалтаас аяллын дугаар, захиалгын дугаар, авиа компани, маршрут болон хугацааны интервалаыг оруулан <i class="fa fa-search icon"></i> товчийг даран түүвэрлэнэ. <i class="fa fa-close icon"></i> товчийг даран түүвэрлэлт болон ангиллыг болиулан үндсэн аяллын жагсаалтыг харуулна.
+                                    </p>
+                                    
+                                    
+
+                                </p>
+                                <p>
+                                    <span class="number">3</span>
+                                    <span class="title-user-guide">Ангилах болон Захиалгаар төлөвлөх</span>
+                                        <div class="details">
+                                    <div class="form-inline searchbycheck">
+                                        <div class="form-group">
+                                            <a class="filter_by_status"><i class="fa fa-clone Ordericon"></i>
+                                                <label> Төлөвлөгдсөн </label>
+                                            </a>
+                                        </div>
+                                        <div class="form-group ">
+                                            <a class="filter_by_status"><i class="fa fa-clone Plannedicon"></i>
+                                                <label> Төлөвлөгдөөгүй </label>
+                                            </a>
+                                        </div>
+                                                                               <div class="form-group">
+                                            <p> Эдгээр 2 төрлөөр ангилан харуулна.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="btn btn-default disabled"><i class="fa fa-edit"></i> Захиалгаар төлөвлөх</a>
+                                <p>товчийг даран    аялал багцаар төлөвлөх цонхруу шилжинэ.</p>
+                                </p>
+                                
+                            </section>
+                            <section id="planorder">
+                                <label>2.2 Захиалгаар төлөвлөх</label>
+                                <img src="zahialgaar-tolovloh.jpg" alt="">
+                            </section>
+                            <section id="accepttravel">
+                                <label>3.1 Аялалд зөвшөөрөл олгох</label>
+                                <img src="aylal-zovshoorol.jpg" alt="">
+                            </section>
+                            <section id="acceptorder">
+                                <label>3.2 Захиалгад зөвшөөрөл олгох</label>
+                                <img src="zahialgaar-zovshooroh.jpg" alt="">
+                            </section>
+                            <section id="listflight">
+                                <label>4. Нислэгийн жагсаалт</label>
+                                <img src="nislegiin-jagsaalt.jpg" alt="">
+                            </section>
+                            <section id="aftn">
+                                <label>AFTN</label>
+                                <img src="aftn.jpg" alt="">
+                            </section>
+                            <section id="flights">
+                                <label>Гүйцэтгэл</label>
+                                <img src="guitsetgel.jpg" alt="">
+                            </section>
+                            <section id="invoices">
+                                <label>Нэхэмжлэл бичих</label>
+                                <img src="nehemjlel.jpg" alt="">
+                            </section>
+                            <section id="strip">
+                                <label>Стрип тулгалт</label>
+                                <img src="strip.jpg" alt="">
+                            </section>
+                            <section id="reports">
+                                <label>Тайлан</label>
+                                <img src="reports.jpg" alt="">
+                            </section>
+                            <section id="notifications">
+                                <label>Мэдээлэл</label>
+                                <img src="notifications.jpg" alt="">
+                            </section>
+                            <section id="aftn">
+                                <label>AFTN</label>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <a href="javascript:;" class="page-quick-sidebar-toggler">
+                    <i class="icon-login"></i>
+                </a>
+            </div>
+            <div class="page-footer">
+                <div class="page-footer-inner"> 2016 &copy;
+                </div>
+                <div class="scroll-to-top">
+                    <i class="icon-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+        <style>
+        .black{
+            color: black;
+        }
+            section {
+                width: 100%;
+                padding: 10px;
+                /*border-bottom: 1px solid #ccc;*/
+            }
+            section h5{
+                color: #216ab6;
+            }
+          
+            .details-post img{
+                width: auto;
+            }
+
+            .title-user-guide {
+                font-size: 16px;
+                color: #216ab6;
+
+                font-weight: 600;
+            }
+
+            .details-post {
+                margin-left: 25px;
+            }
+           
+
+            .white {
+                color: white;
+            }
+
+            .yellow {
+
+                color: #fff8c1;
+            }
+
+            .pink {
+
+                color: #f5adb8;
+            }
+
+            section p {
+                margin: 10px 0px;
+            }
+
+            .disabled {
+                pointer-events: none;
+                cursor: default;
+            }
+
+            section .square {
+                width: 10px;
+                height: 10px;
+                background: red;
+            }
+            section .number {
+                border: 1px solid;
+                border-radius: 34px!important;
+                padding-left: 6px;
+                padding-right: 6px;
+                background: white;
+                color: #216ab6;
+
+                font-size: 16px;
+            }
+            section .icon {
+                padding-left: 5px;
+                color: #216ab6;
+            }
+            section img {
+                width: 100%;
+                margin-top: 10px
+            }
+            section p {
+                color: #777;
+            }
+            section label {
+                width: 100%;
+                border-bottom: 1px solid #949494;
+                color: #216ab6;
+                font-size: 19px;
+                padding-bottom: 9px;
+            }
+            section .details {
+                max-width: 100%;
+
+                margin-left: 30px;
+            }
+
+            section .btn {
+                margin-top: 5px;
+                background: #484848;
+                border-radius: 5px !important;
+                color: white;
+                border: 1px solid white;
+                padding: 2px 8px;
+                float: left;
+                margin-left: 30px;
+                margin-right: 10px;
+            }
+            section .details label {
+                border-bottom: none;
+                width: auto;
+                color: black;
+                font-size: 14px;
+                margin-bottom: 0px;
+                padding-bottom: 0px;
+            }
+            section .details a {}
+
+            section .details .form-group {
+                padding-right: 10px;
+            }
+
+            section .details .btn {
+                padding: 2px 8px;
+
+                color: #333;
+                background-color: #fff;
+                border-color: #ccc;
+            }
+            section .searchbycheck {
+                padding-bottom: 5px;
+            }
+            .sections section:first-child {
+                margin-top: 60px;
+            }
+
+            section.active-userguide {
+                background: none;
+            }
+
+            #userguide {
+                top: 15px;
+            }
+
+
+            .active-userguide {
+                color: white !important;
+                background: #216ab6;
+                text-decoration: none;
+            }
+
+            a:focus {
+                text-decoration: none;
+            }
+
+            a:hover {
+                text-decoration: none;
+            }
+
+            .active ul li {
+                background: none;
+            }
+
+            .fixed {
+                position: fixed;
+                top: 10px;
+            }
+
+            #userguide ul {
+                padding-left: 15px;
+            }
+
+            #userguide ul li {
+                list-style: none;
+                line-height: 25px;
+            }
+
+            #userguide ul li a {
+                text-transform: uppercase;
+                padding: 10px;
+                line-height: 30px;
+            }
+
+            #userguide ul li li a {
+                text-transform: none;
+                padding: 10px;
+                line-height: 30px;
+
+                color: #6d6d6d
+            }
+
+            #userguide ul .active a {
+                color: white;
+            }
+
+            body {
+                position: relative;
+            }
+
+            #section1 {
+
+                height: 500px;
+                color: black;
+            }
+
+            #section2 {
+
+                height: 500px;
+                color: black;
+            }
+
+            #section3 {
+
+                height: 500px;
+                color: black;
+            }
+
+            #section41 {
+                height: 500px;
+                color: black;
+            }
+
+            #section42 {
+
+                height: 500px;
+                color: black;
+            }
+
+            .content-of-guide {
+                border-left: 1px solid #bababa;
+            }
+
+            .page-logo i {
+                color: white;
+                font-size: 28px;
+                padding-top: 18px;
+            }
+
+            .order {
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+            section .other {
+                float: initial;
+                margin-top: 0;
+                margin-left: 12px;
+            }
+
+            @media ( max-width: 1441px) {
+                .menu-of-guide {
+                    width: 20%;
+                }
+                .content-of-guide {
+                    width: 80%;
+                }
+            }
+
+            @media ( max-width: 1200px) {
+                .menu-of-guide {
+                    width: 100%;
+                    display: none;
+                }
+                .content-of-guide {
+                    width: 100%;
+                }
+                .fixed {
+                    position: relative;
+                }
+            }
+
+            .navbar-fixed-bottom,
+            .navbar-fixed-top {
+                position: relative;
+            }
+        </style>
+        <script src="../assets/global/plugins/jquery.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/js.cookie.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/moment.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="bootstrap-datepicker.mn.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/clockface/js/clockface.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="../assets/pages/scripts/components-date-time-pickers.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js" type="text/javascript"></script>
+        <script src="../assets/global/plugins/jquery-multi-select/js/jquery.multi-select.js" type="text/javascript"></script>
+        <script src="../assets/pages/scripts/table-datatables-colreorder.min.js" type="text/javascript"></script>
+        <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
+        <script src="../assets/layouts/layout/scripts/layout.js" type="text/javascript"></script>
+        <script src="../assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
+        <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
+        <script>
+        // $(document).ready(function() {
+        //     $("#userguide a").on('click', function(event) {
+        //         if (this.hash !== "") {
+        //             event.preventDefault();
+        //             var hash = this.hash;
+
+        //             $('html, body').animate({
+        //                 scrollTop: $(hash).offset().top
+        //             }, 800, function() {
+        //                 window.location.hash = hash;
+        //             });
+        //         }
+        //         $('#userguide').find('li.active').removeClass('active');
+        //         //adding the state for this parent menu
+        //         $(this).parents("li").addClass('active');
+        //     });
+        // });
+
+
+        var sections = $('section'),
+            nav = $('#userguide'),
+            sul = 3;
+        nav_height = 1;
+
+        $(window).on('scroll', function() {
+            var cur_pos = $(this).scrollTop();
+            if ($(window).scrollTop() >= 50) {
+                $("#userguide").addClass("fixed");
+            } else {
+                $("#userguide").removeClass("fixed");
+            }
+            sections.each(function() {
+                var top = $(this).offset().top - nav_height,
+                    bottom = top + $(this).outerHeight();
+
+                if (cur_pos >= top + sul && cur_pos <= bottom) {
+                    nav.find('a').removeClass('active-userguide');
+                    sections.removeClass('active-userguide');
+
+                    $(this).addClass('active-userguide');
+                    nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active-userguide');
+                }
+            });
+
+        });
+
+        nav.find('a').on('click', function() {
+            var $el = $(this),
+                id = $el.attr('href');
+
+            $('html, body').animate({
+                scrollTop: $(id).offset().top + sul
+            }, 500);
+
+            return false;
+        });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+
+<head lang="en">
+    <title>Cтрип тулгалт - Air Traffic Flow Management Software</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <!--         <link th:href="@{http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all}" rel="stylesheet" type="text/css" /> -->
+    <!--         <link th:href="@{https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i}" rel="stylesheet" type="text/css" /> -->
+    <link rel="stylesheet" type="text/css" href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" />
+    <link rel="stylesheet" id="style_components" type="text/css" href="../assets/global/css/components-rounded.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/global/css/plugins.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/layouts/layout/css/layout.min.css" />
+    <link rel="stylesheet" type="text/css" id="style_color" href="../assets/layouts/layout/css/themes/darkblue.min.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/layouts/layout/css/custom.min.css" />
+    <link rel="stylesheet" type="text/css" href="../custom/css/custom.css" />
+    <link rel="stylesheet" type="text/css" href="../custom/fonts/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="../custom/menu/menu.css" />
+    <link rel="stylesheet" type="text/css" href="../custom/search/search.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../assets/icon/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="../assets/icon/favicon.ico" />
+    <div>
+        <link rel="stylesheet" type="text/css" href="../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" />
+        <link rel="stylesheet" type="text/css" href="1.css" />
+    </div>
+</head>
+<!-- END HEAD -->
+
+<body class="page-header-fixed page-sidebar-closed-hide-logo">
+    <div class="page-wrapper" id="mydiv">
+        <div class="clearfix"> </div>
+        <div class="page-container">
+            <div class="page-sidebar-wrapper">
+                <div class="page-sidebar navbar-collapse collapse">
+                    <div>
+                        <ul class="page-sidebar-menu  page-header-fixed  " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="100">
+                            <li class="sidebar-toggler-wrapper hide">
+                                <div class="sidebar-toggler">
+                                    <span></span>
+                                </div>
+                            </li>
+                            <div class="nav-item air-logo">
+                                <a class="home1" href="/atfms/"><i class="fa fa-home"></i></a>
+                                <div class="menu-toggler sidebar-toggler">
+                                    <i class="fa fa-navicon"></i>
+                                </div>
+                                <img alt="" class="" src="../assets/icon/atfms.png" />
+                            </div>
+                            <li class="nav-item user-profile start">
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <span class="user-code">EL</span>
+                                    <span class="badge badge-default" id="notificationCount"></span>
+                                    <span class="title">t.test</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/uInfo">
+                                            <i class="icon-user"></i>
+                                            <span class="title">Хувийн тохиргоо</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item user-profile " style="padding-bottom: 12px! important;">
+                                <img class="menu-img" src="../assets/icon/menu/logout.png" />
+                                <a href="javascript:;" class="nav-link nav-toggle" id="logOutBtn">
+                                    <span class="title">Гарах</span>
+                                </a>
+                                <form id="logout-form" method="post" action="/atfms/logout">
+                                    <input type="hidden" name="_csrf" value="2da21315-4871-4f7b-8bc2-9ea3357b016b" />
+                                </form>
+                            </li>
+                            <li class="nav-item start">
+                                <img class="menu-img" src="../assets/icon/menu/order.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/orders">
+                                    <span class="title">Нислэг захиалга</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/plan.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/travelList">
+                                    <span class="title">Аялал төлөвлөх</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/approve.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/acceptNumbers">
+                                    <span class="title">Зөвшөөрөл олгох</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/list-flight.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/registrationList">
+                                    <span class="title">Нислэгийн жагсаалт</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/aftn.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/aftn">
+                                    <span class="title">AFTN мэдээ</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/perfo.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/flights">
+                                    <span class="title">Гүйцэтгэл</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/invoice.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/invoices">
+                                    <span class="title">Нэхэмжлэл бичих</span>
+                                </a>
+                            </li>
+                            <li class="nav-item active">
+                                <img class="menu-img" src="../assets/icon/menu/strip.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/stripcheck">
+                                    <span class="title">Cтрип тулгалт</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/report1.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/reports">
+                                    <span class="title">Тайлан</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/notification.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/notifications">
+                                    <span class="title">Мэдээлэл</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/help.png" />
+                                <a class="nav-link nav-toggle" href="/atfms/">
+                                    <span class="title">Хэрэглэгчийн тусламж</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <img class="menu-img" src="../assets/icon/menu/settings.png" />
+                                <a href="javascript:;" class="nav-link nav-toggle">
+                                    <span class="title">Тохиргоо</span>
+                                </a>
+                                <ul class="sub-menu">
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/points">
+                                            <i class="fa fa-map-marker"></i>
+                                            <span class="title">Цэгийн бүртгэл</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/planes">
+                                            <i class="fa fa-plane"></i>
+                                            <span class="title">Агаарын хөлгийн маяг</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/countries">
+                                            <i class="fa fa-globe"></i>
+                                            <span class="title">Улс</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/types">
+                                            <i class="fa fa-sliders"></i>
+                                            <span class="title">Төрөл</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/banks">
+                                            <i class="fa fa-bank"></i>
+                                            <span class="title">Банк</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/users">
+                                            <i class="fa fa-users"></i>
+                                            <span class="title">Хэрэглэгч</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/roles">
+                                            <i class="fa fa-user-times"></i>
+                                            <span class="title">Эрхийн тохиргоо</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/organizations">
+                                            <i class="fa fa-industry"></i>
+                                            <span class="title">Байгууллага</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/sectors">
+                                            <i class="fa fa-circle-thin"></i>
+                                            <span class="title">Сектор</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/services">
+                                            <i class="fa fa-cogs"></i>
+                                            <span class="title">Үйлчилгээ</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/routes">
+                                            <i class="fa fa-compass"></i>
+                                            <span class="title">Маршрут</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/flightLevels">
+                                            <i class="fa fa-fighter-jet"></i>
+                                            <span class="title">Нислэгийн цуваа</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/ways">
+                                            <i class="fa fa-road"></i>
+                                            <span class="title">Зам</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/planeRegisterWeight">
+                                            <i class="fa fa-balance-scale"></i>
+                                            <span class="title">Онгоцны Регистер жин</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/timeDifference">
+                                            <i class="fa fa-clock-o"></i>
+                                            <span class="title">Цагийн зөрүү</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/equipments">
+                                            <i class="fa fa-cog"></i>
+                                            <span class="title">Тоноглол</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link " href="/atfms/">
+                                            <i class="fa fa-history"></i>
+                                            <span class="title">Түүх</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- END SIDEBAR MENU -->
+                    </div>
+                </div>
+            </div>
+            <div class="page-content-wrapper">
+                <div class="page-content">
+                    <div class="page-header navbar navbar-fixed-top">
+                        <div class="page-header-inner ">
+                            <div>
+                                <div class="col-md-3 header-title">
+                                    <div class="page-logo">
+                                        <img class="" src="../assets/icon/menu/strip.png" />
+                                        <span class="caption-subject font-dark sbold uppercase">Cтрип тулгалт</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-9">
+                                    <div class="page-actions">
+                                        <div class="form-inline searchbycheck">
+                                            <div class="form-group">
+                                                <a class="filter_by_status" href="/atfms/stripcheck?isChecked=true&amp;sortByStripNo=&amp;sortByTravelNo=&amp;sortByOrgName=&amp;sortByRoute=&amp;sortByPlaneName=&amp;sortByFlightlvl=&amp;sortByAcceptNo=&amp;sortByModifiedBy=&amp;sortByPlaneCode=&amp;sortByFlightP=&amp;sortByDate=&amp;sortByStartPoint=&amp;sortByStartTime=&amp;sortByEnterPoint=&amp;sortByEnterTime=&amp;sortByExitPoint=&amp;sortByExitTime=&amp;sortByEndPoint=&amp;sortByEndTime=&amp;sortByRegDate=&amp;sortByRegBy=&amp;sortByFlightType=&amp;sortByTravelType=&amp;sortByOrderType=&amp;stripNumber=&amp;travelNumber=&amp;orderNumber=&amp;orgName=&amp;routeName=&amp;travelType=&amp;flightType=&amp;searchIn=&amp;searchOut="><i class="fa fa-clone checkfalseicon"></i>
+                                                    <label> Тулгасан </label>
+                                                </a>
+                                            </div>
+                                            <div class="form-group">
+                                                <a class="filter_by_status" href="/atfms/stripcheck?isChecked=false&amp;sortByStripNo=&amp;sortByTravelNo=&amp;sortByOrgName=&amp;sortByRoute=&amp;sortByPlaneName=&amp;sortByFlightlvl=&amp;sortByAcceptNo=&amp;sortByModifiedBy=&amp;sortByPlaneCode=&amp;sortByFlightP=&amp;sortByDate=&amp;sortByStartPoint=&amp;sortByStartTime=&amp;sortByEnterPoint=&amp;sortByEnterTime=&amp;sortByExitPoint=&amp;sortByExitTime=&amp;sortByEndPoint=&amp;sortByEndTime=&amp;sortByRegDate=&amp;sortByRegBy=&amp;sortByFlightType=&amp;sortByTravelType=&amp;sortByOrderType=&amp;stripNumber=&amp;travelNumber=&amp;orderNumber=&amp;orgName=&amp;routeName=&amp;travelType=&amp;flightType=&amp;searchIn=&amp;searchOut="><i class="fa fa-clone checktrueicon"></i>
+                                                    <label> Тулгаагүй </label>
+                                                </a>
+                                            </div>
+                                            <div class="form-group">
+                                                <a class="filter_by_status" href="/atfms/stripcheck?sortByStripNo=&amp;sortByTravelNo=&amp;sortByOrgName=&amp;sortByRoute=&amp;sortByPlaneName=&amp;sortByFlightlvl=&amp;sortByAcceptNo=&amp;sortByModifiedBy=&amp;sortByPlaneCode=&amp;sortByFlightP=&amp;sortByDate=&amp;sortByStartPoint=&amp;sortByStartTime=&amp;sortByEnterPoint=&amp;sortByEnterTime=&amp;sortByExitPoint=&amp;sortByExitTime=&amp;sortByEndPoint=&amp;sortByEndTime=&amp;sortByRegDate=&amp;sortByRegBy=&amp;sortByFlightType=&amp;sortByTravelType=&amp;sortByOrderType=&amp;travelNumber=&amp;stripNumber=&amp;orderNumber=&amp;orgName=&amp;routeName=&amp;travelType=&amp;flightType=&amp;searchIn=&amp;searchOut="><i class="fa fa-clone" style="color:red;"></i>
+                                                    <label> Бүгд </label>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <a class="btn btn-default" href="/atfms/stripcheck/print"><i class="fa fa-print"></i> Хэвлэх</a>
+                                        <a class="btn btn-default" href="/atfms/stripcheck/excel"><i class="fa fa-download"></i> Excel</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="overplay"></div>
+                    <div class="row jagsaalt order">
+                        <form class="form" name="search" method="post" accept-charset="utf-8" autocomplete="off" action="/atfms/stripcheck">
+                            <div class="portlet box">
+                                <div class="portlet-title">
+                                    <div class="caption">
+                                        <div class="form-inline">
+                                            <input type="hidden" id="isChecked" name="isChecked" value="" />
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Аяллын дугаар" id="travelNumber" name="travelNumber" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Захиалгын дугаар" id="orderNumber" name="orderNumber" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Авиа компани" id="organization" name="organization" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Маршрут" id="route" name="route" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control" placeholder="Стрипын дугаар" id="stripNumber" name="stripNumber" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-control" id="travelType" name="travelType">
+                                                    <option value="">Аяллын төрөл</option>
+                                                    <option value="International">Олон улс</option>
+                                                    <option value="Local">Орон нутаг</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <select class="form-control" id="flightType" name="flightType">
+                                                    <option value="">Захиалгын төрөл</option>
+                                                    <option value="Fixed">Тогтмол</option>
+                                                    <option value="FixedPlus">Тогтмолын нэмэгдэл</option>
+                                                    <option value="NonFixed">Цагийн хуваарийн бус</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control date-picker dates_format" type="text" placeholder="YYYY.MM.DD" id="searchIn" name="searchIn" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <input class="form-control date-picker dates_format" type="text" placeholder="YYYY.MM.DD" id="searchOut" name="searchOut" value="" />
+                                            </div>
+                                            <button class="btn btn-link search-btn" type="submit"><i class="fa fa-search"></i></button>
+                                            <a class="btn btn-link reset-btn" type="button" href="/atfms/stripcheck"><i class="glyphicon glyphicon-remove" title="Цэвэрлэх"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="col-md-12 paginate-number">
+                                    <div class="col-md-6 total-count">Нийт:
+                                        <span>21</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate" style="float: right;">
+                                            <ul class="pagination" style="visibility: visible;">
+                                                <li>
+                                                </li>
+                                                <li class="prev">
+                                                </li>
+                                                <li class="active disabled">
+                                                    <button name="page" class="btn blue" value="0">1</button>
+                                                </li>
+                                                <li>
+                                                    <button name="page" class="btn btn-default" value="1">2</button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default" name="page" value="1">
+                                                        <i class="fa fa-angle-right"></i>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default" name="page" value="1">
+                                                        <i class="fa fa-angle-double-right"></i>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="table-scrollable">
+                                    <table class="table table-bordered table-condensed flip-content">
+                                        <thead class="flip-content">
+                                            <th>№</th>
+                                            <th>
+                                                Нислэгийн чиглэл
+                                            </th>
+                                            <th>
+                                                Аяллын дугаар
+                                            </th>
+                                            <th>
+                                                Агаарын хөлөг
+                                            </th>
+                                            <th>
+                                                Регистер
+                                            </th>
+                                            <th>
+                                                Агаарын хөлгийн дарга
+                                            </th>
+                                            <th>
+                                                А/Х даргын хязгаарлалт</a>
+                                            </th>
+                                            <th>
+                                                Нислэгийн төрөл
+                                            </th>
+                                            <th>
+                                                Маршрут
+                                            </th>
+                                            <th>
+                                                Нисэх цаг /төлөвлөсөн/
+                                            </th>
+                                            <th>
+                                                Нисэх цаг /жинхэнэ/
+                                            </th>
+                                            <th>
+                                                Буух цаг /төлөвлөсөн/
+                                            </th>
+                                            <th>
+                                                Буух цаг /жинхэнэ/
+                                            </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="show_hide">
+                                                <td>1</td>
+                                                <td>
+                                                    ZMUB ZDCC
+                                                </td>
+                                                <td>
+                                                    F50
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>Орон нутаг</td>
+                                                <td>UDA G338 HN</td>
+                                                <td>07:00</td>
+                                                <td></td>
+                                                <td>ZBAA</td>
+                                                <td>09:20</td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col-md-12 paginate-number">
+                                    <div class="col-md-6 total-count">Нийт:
+                                        <span>21</span>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="dataTables_paginate paging_bootstrap_full_number" id="sample_1_paginate" style="float: right;">
+                                            <ul class="pagination" style="visibility: visible;">
+                                                <li>
+                                                </li>
+                                                <li class="prev">
+                                                </li>
+                                                <li class="active disabled">
+                                                    <button name="page" class="btn blue" value="0">1</button>
+                                                </li>
+                                                <li>
+                                                    <button name="page" class="btn btn-default" value="1">2</button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default" name="page" value="1">
+                                                        <i class="fa fa-angle-right"></i>
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button class="btn btn-default" name="page" value="1">
+                                                        <i class="fa fa-angle-double-right"></i>
+                                                    </button>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="hidden" name="_csrf" value="2da21315-4871-4f7b-8bc2-9ea3357b016b" />
+                        </form>
+                        <div id="stripCheckForm">
+                            <div class="portlet-body flip-scroll">
+                                <div class="table-scrollable">
+                                    <table class="table table-bordered table-condensed flip-content">
+                                        <thead class="flip-content">
+                                            <th>№</th>
+                                            <th>
+                                                Нислэгийн чиглэл
+                                            </th>
+                                            <th>
+                                                Аяллын дугаар
+                                            </th>
+                                            <th>
+                                                Агаарын хөлөг
+                                            </th>
+                                            <th>
+                                                Регистер
+                                            </th>
+                                            <th>
+                                                Агаарын хөлгийн дарга
+                                            </th>
+                                            <th>
+                                                А/Х даргын хязгаарлалт
+                                            </th>
+                                            <th>
+                                                Нислэгийн төрөл
+                                            </th>
+                                            <th>
+                                                Маршрут
+                                            </th>
+                                            <th>
+                                                Нисэх цаг /төлөвлөсөн/
+                                            </th>
+                                            <th>
+                                                Нисэх цаг /жинхэнэ/
+                                            </th>
+                                            <th>
+                                                Буух цаг /төлөвлөсөн/
+                                            </th>
+                                            <th>
+                                                Буух цаг /жинхэнэ/
+                                            </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="">
+                                                <td>1</td>
+                                                <td>
+                                                    ZMUB ZDCC
+                                                </td>
+                                                <td>
+                                                    F50
+                                                </td>
+                                                <td>
+                                                    <input type="text">
+                                                </td>
+                                                <td>
+                                                    <input type="text">
+                                                </td>
+                                                <td>
+                                                    <input type="text">
+                                                </td>
+                                                <td>Орон нутаг</td>
+                                                <td>UDA G338 HN</td>
+                                                <td>07:00</td>
+                                                <td>
+                                                    <input type="text">
+                                                </td>
+                                                <td>ZBAA</td>
+                                                <td>09:20</td>
+                                                <td>
+                                                    <input type="text">
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class=" aylal-button">
+                                <div class="order-button">
+                                    <a class="btn blue btn-sm" id="saveOrderTravelForm">Хадгалах</a>
+                                    <a class="btn green-meadow btn-sm" href="/atfms/order/314">Болих</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <style>
+                    .overplay {
+                        height: 100%;
+                        background: #00000075;
+                        width: 100%;
+                        position: fixed;
+                        z-index: 200;
+                        display: none;
+                        left: 190px;
+                    }
+
+                    #stripCheckForm {
+                        width: 80%;
+                        background-color: white;
+                        padding: 20px;
+                        margin-top: 10px;
+                        border-top: 5px solid #2c3643;
+                        position: fixed;
+                        overflow: auto;
+                        margin-bottom: 33px;
+                        max-width: 100%;
+                        z-index: 210;
+                        margin: 80px
+                    }
+
+                    @media ( max-width: 1441px) {
+                        #stripCheckForm {
+                            margin: auto 30px;
+                        }
+                    }
+
+                    @media only screen and (max-width: 1920px) and (min-width: 1800px) {
+                        #stripCheckForm {
+                            margin: 80px;
+                        }
+                    }
+
+                    .show_hide {
+                        display: none;
+                    }
+
+                    .overplay {
+                        height: 100%;
+                        background: #00000075;
+                        width: 100%;
+                        position: fixed;
+                        z-index: 200;
+                        display: none;
+                        left: 190px;
+                    }
+                    </style>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="footer-text hidden-print">
+            <div class="page-footer-inner">
+                <span>2018</span> &copy; Иргэний Нисэхийн Ерөнхий Газар </div>
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
+    </div>
+    <script type="text/javascript" src="../assets/global/plugins/jquery.min.js"></script>
+    <script type="text/javascript" src="../assets/global/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../assets/global/plugins/js.cookie.min.js"></script>
+    <script type="text/javascript" src="../assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script type="text/javascript" src="../assets/global/plugins/jquery.blockui.min.js"></script>
+    <script type="text/javascript" src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+    <script type="text/javascript" src="../assets/global/scripts/app.min.js"></script>
+    <script type="text/javascript" src="../assets/layouts/layout/scripts/layout.min.js"></script>
+    <script type="text/javascript" src="../assets/layouts/layout/scripts/demo.min.js"></script>
+    <script src="/atfms/webjars/sockjs-client/1.0.2/sockjs.min.js"></script>
+    <script src="/atfms/webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
+    <script src="/atfms/notify.js"></script>
+    <!-- Common js -->
+    <script type="text/javascript" src="../sysjs/common/common.js"></script>
+    <div>
+        <script type="text/javascript" src="../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script type="text/javascript" src="../assets/global/plugins/jquery-inputmask/jquery.inputmask.bundle.min.js"></script>
+        <script>
+                    $("#stripCheckForm").hide();
+                    $(".show_hide").show();
+                    $('.show_hide').click(function() {
+                        $("#stripCheckForm").toggle();
+                        $(".overplay").toggle();
+                    });
+                    $('.overplay').click(function() {
+                        $("#stripCheckForm").toggle();
+                        $(".overplay").toggle();
+                    });
+                    </script>
+        <!-- <script type="text/javascript" src="1.js"></script> -->
+    </div>
+</body>
+
+</html>

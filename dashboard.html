@@ -1,0 +1,1036 @@
+<div class="row jagsaalt order">
+    <style>
+    .chart-1 {
+        margin-bottom: 10px
+    }
+
+    .edited5 {
+        padding-left: 5px;
+    }
+
+    .naryad {
+        height: 1081px;
+    }
+
+    .chart {
+        padding-top: 15px;
+    }
+
+    .count {
+        float: right;
+        position: absolute;
+        right: 36px;
+        margin-top: 5px;
+    }
+
+    .type-flight {
+        position: absolute;
+        margin-top: 5px;
+    }
+
+    .fixed-flight {
+        margin-top: 5px;
+    }
+
+
+    ul li {
+        line-height: 24px
+    }
+
+
+
+    ul {
+
+        list-style-type: none;
+    }
+
+
+    ul li:before {
+
+        content: '';
+
+        display: inline-block;
+
+        height: 20px;
+
+        width: 20px;
+
+        background-size: 20px;
+
+        background-image: url("file:///C:/Users/GanErdene/Downloads/AWT-Plane.png");
+
+        background-repeat: no-repeat;
+        margin-top: 5px;
+        margin-right: 5px;
+    }
+
+
+    .title {
+        border-bottom: 1px dashed #007fc9;
+        margin-left: 10px;
+        padding-bottom: 3px;
+        color: #008ee0;
+    }
+
+    thead {
+        background: #fbfbfb;
+        color: #17569a;
+    }
+
+    .portlet.light>.portlet-title>.caption>.caption-subject {
+        font-size: 14px;
+        font-weight: 400 !important;
+        color: #17569a !important;
+    }
+
+    .table thead tr th {
+        font-weight: 300;
+    }
+
+    .table-bordered>thead>tr>td {
+        border-bottom-width: 1px;
+    }
+
+    .portlet.light.portlet-fit>.portlet-body {
+        padding: 0px 20px 16px;
+    }
+
+    .portlet.light.portlet-fit>.portlet-title {
+        padding: 5px 20px 0px;
+        border: none;
+    }
+
+    .table>thead:first-child>tr:first-child>td {
+        white-space: normal;
+    }
+
+    .jagsaalt .portlet {
+        margin-bottom: 0px;
+        margin-top: 10px;
+    }
+    </style>
+    <style>
+    .col-lg-4 {
+        padding-bottom: 10px;
+    }
+
+    tspan {
+        font-family: "Roboto Condensed";
+        font-size: 15px;
+        font-weight: 300;
+        padding-top: 2px;
+    }
+
+    .highcharts-pie-series .highcharts-data-label-connector {
+        stroke: silver;
+        stroke-dasharray: 2, 2;
+        stroke-width: 2px;
+    }
+
+    .page-header-fixed .page-container {
+        margin-top: 0px;
+    }
+
+    .edited1 {
+        padding-right: 5px;
+    }
+
+    .edited {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .login-button .order-button1 button {
+        padding: 0px 11px;
+        border-radius: 5px !important;
+        margin-top: 5px;
+        font-size: 14px;
+    }
+
+    .order {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .login-user {
+        background: #3074bd;
+        border-radius: 5px !important;
+        border: none;
+        /* margin-right: 10px; */
+        /* padding-right: 58px !important; */
+        width: 91%;
+        height: 23px;
+        margin-top: 6px;
+        color: white;
+    }
+
+    .login-password {
+        background: #3074bd;
+        border-radius: 5px !important;
+        border: none;
+        /* margin-right: 10px; */
+        /* padding-right: 58px !important; */
+        width: 91%;
+        height: 23px;
+        margin-top: 6px;
+        color: white;
+    }
+
+    .login-button .order-button1 {
+        float: right;
+        margin-right: 7%;
+    }
+
+    .login {
+        height: 55%;
+        background: #175699f5;
+        border-top: 4px solid #3e8ade;
+    }
+
+    .login-row {
+        margin-top: 20px;
+    }
+
+    .login-row1 {
+        margin-top: 0px;
+    }
+
+    .login-button {
+        margin-top: 0px;
+    }
+
+    input::placeholder {
+        color: red;
+    }
+
+    .logo-border {
+        border-left: 1px dashed #008ee0
+    }
+
+    .logo-of {
+        border-bottom: 1px solid #e2e2e2;
+        background: white;
+        background: #e6e6e6;
+    }
+
+    .logo-ineg {
+        width: 100% !important;
+        margin: auto!important;
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .logo-ineg-2 {
+        width: 51%!important;
+        margin: auto!important;
+        margin-top: 2px !important;
+        margin-bottom: 2px !important;
+    }
+
+    .login-wrap {
+        width: 235px;
+        margin: auto;
+        position: fixed;
+        box-shadow: 3px 0px 5px #9e9e9e;
+    }
+
+    .page-content-wrapper .page-content {
+        position: relative;
+        margin-top: 0;
+        min-height: 100vh;
+        padding: 0px 0px 0px;
+        background: #f2f2f2;
+        box-shadow: inset 3px 0px 5px #9e9e9e;
+    }
+
+    .login-i {
+        padding: 10px;
+        /*padding-left: 20px;*/
+        font-size: 20px;
+        color: #3074bd;
+    }
+
+    .home {
+        height: 100vh;
+    }
+
+    .home-logo {
+        height: 45%;
+        background: #ffffff;
+        text-align: center;
+    }
+
+    .atfms img {
+        position: relative;
+        margin-top: 15%;
+        max-width: 90%;
+    }
+
+    .page-sidebar {
+        width: 235px;
+    }
+
+    .page-content-wrapper .page-content {
+        margin-left: 235px;
+    }
+    </style>
+    <div class="col-md-12">
+        <div class="col-md-5 edited1">
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <!-- <i class="icon-bubble font-dark"></i> -->
+                        <span class="caption-subject font-dark bold uppercase">2018 оны нийт нислэгийн тоо</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="title">Тогтмол</div>
+                    <div class="fixed-flight">
+                        <ul>
+                            <li>
+                                <span class="type-flight">Өнгөлтийн нислэг:</span>
+                                <span class="count">12</span>
+                            </li>
+                            <li>
+                                <span class="type-flight">Олон улсын нислэгийн хөөрөлт буулт:</span>
+                                <span class="count">12</span>
+                            </li>
+                            <li>
+                                <span class="type-flight"> Орон нутгийн хөөрөлт Буулт:</span>
+                                <span class="count">12</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="title">Цагийн хувиарын бус</div>
+                    <div class="fixed-flight">
+                        <ul>
+                            <li>
+                                <span class="type-flight">Өнгөлтийн нислэг:</span>
+                                <span class="count">12</span>
+                            </li>
+                            <li>
+                                <span class="type-flight">Олон улсын нислэгийн хөөрөлт буулт:</span>
+                                <span class="count">12</span>
+                            </li>
+                            <li>
+                                <span class="type-flight">Орон нутгийн хөөрөлт Буулт:</span>
+                                <span class="count">12</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <!-- <i class="icon-bubble font-dark"></i> -->
+                        <span class="caption-subject font-dark bold uppercase">7 хоногийн нислэгийн тоо</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="title">Тогтмол</div>
+                            <div id="container" class="chart"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="title">Цагийн хувиарын бус</div>
+                            <div id="container1" class="chart"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7 edited5">
+            <div class="portlet light portlet-fit bordered naryad">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <!-- <i class="icon-bubble font-dark"></i> -->
+                        <span class="caption-subject font-dark bold uppercase">2018.1.9 өдрийн хоногийн нислэгийн төлөвлөгөө</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="table-scrollable ">
+                        <div class=" " style="position: relative; overflow: auto; width: 100%; max-height: 1000px; ">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <td rowspan="2">№</td>
+                                        <td rowspan="2">Аялалын дугаар</td>
+                                        <th colspan="2" scope="colgroup">Нисэн гарах</th>
+                                        <th colspan="2" scope="colgroup">Нисэн очих</th>
+                                        <td rowspan="2">А/Х маяг дугаар</td>
+                                        <td rowspan="2">Агаарын хаалга</td>
+                                        <td rowspan="2">Бэлтгэл аэрод</td>
+                                        <td rowspan="2">Тайлбар</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Буудал</th>
+                                        <th scope="col">Цаг</th>
+                                        <th scope="col">Буудал</th>
+                                        <th scope="col">Цаг</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>1</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>2</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>3</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>4</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>5</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>6</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>7</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>8</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>9</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>10</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th>11</th>
+                                        <td>MGL702</td>
+                                        <td>Бангкок</td>
+                                        <td>00:50</td>
+                                        <td>УБ</td>
+                                        <td>07:00</td>
+                                        <td>B763 JU1021</td>
+                                        <td>Z156 NIXAL</td>
+                                        <td>ИРК ХХОТ У-ТАПАО</td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 chart-1">
+        <div class="col-md-4 edited1">
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-dark bold uppercase">7 хоногийн нислэгийн төлөв</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="container2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 edited">
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-dark bold uppercase">7 хоногийн сектор ашиглалт</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="container3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 edited5">
+            <div class="portlet light portlet-fit bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <span class="caption-subject font-dark bold uppercase">2018.1.9-н хамгийн их ниссэн 5 хөлгийн маяг</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="container4"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+Highcharts.chart('container', {
+    chart: {
+        type: 'column',
+
+    },
+    credits: {
+        enabled: false
+    },
+    title: {
+        text: ''
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: [
+            '2018.1.1',
+            '2018.1.2',
+            '2018.1.3',
+            '2018.1.4',
+            '2018.1.5',
+            '2018.1.6',
+            '2018.1.7',
+
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:1f} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Өнгөрөлтийн нислэг',
+        data: [49, 71, 106, 129, 144, 176, 135, ]
+
+    }, {
+        name: 'ОУ-ын хөөрөлт буулт',
+        data: [83, 78, 98, 93, 106, 84, 105, ]
+
+    }, {
+        name: 'ОН-ийн хөөрөлт буулт',
+        data: [48, 38, 39.3, 41, 47, 48, 59, ]
+
+    }]
+});
+Highcharts.chart('container1', {
+    chart: {
+        type: 'column'
+    },
+    credits: {
+        enabled: false
+    },
+    title: {
+        text: ''
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: [
+            '2018.1.1',
+            '2018.1.2',
+            '2018.1.3',
+            '2018.1.4',
+            '2018.1.5',
+            '2018.1.6',
+            '2018.1.7',
+
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: ''
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:1f} </b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Өнгөрөлтийн нислэг',
+        data: [49, 71, 106, 129, 144, 176, 135, ]
+
+    }, {
+        name: 'ОУ-ын хөөрөлт буулт',
+        data: [83, 78, 98, 93, 106, 84, 105, ]
+
+    }, {
+        name: 'ОН-ийн хөөрөлт буулт',
+        data: [48, 38, 39.3, 41, 47, 48, 59, ]
+
+    }]
+});
+
+
+Highcharts.chart('container2', {
+
+    title: {
+        text: ''
+    },
+    credits: {
+        enabled: false
+    },
+
+    subtitle: {
+        text: ''
+    },
+
+    yAxis: {
+        title: {
+            text: ''
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    xAxis: {
+        categories: ['2018.1.1', '2018.1.2', '2018.1.3', '2018.1.4', '2018.1.5', '2018.1.6', '2018.1.7']
+    },
+
+
+    series: [{
+        name: 'Захиалсан',
+        data: [43, 52, 57, 69, 67, 55, 65]
+    }, {
+        name: 'Төлөвлөсөн',
+        data: [24, 24, 29, 29, 32, 30, 38]
+    }, {
+        name: 'Гүйцэтгэсэн',
+        data: [11, 17, 16, 19, 20, 24, 32]
+    }, {
+        name: 'Цуцалсан',
+        data: [null, null, 7, 12, 15, 22, 34]
+    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+
+
+// Make monochrome colors
+var pieColors = (function() {
+    var colors = [],
+        base = Highcharts.getOptions().colors[0],
+        i;
+
+    for (i = 0; i < 10; i += 1) {
+        // Start out with a darkened base color (negative brighten), and end
+        // up with a much brighter color
+        colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
+    }
+    return colors;
+}());
+
+// Build the chart
+Highcharts.chart('container3', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    credits: {
+        enabled: false
+    },
+    title: {
+        text: ''
+    },
+    tooltip: {
+        pointFormat: ''
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            colors: pieColors,
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b><br>{point.y:1f} ',
+                distance: -50,
+                filter: {
+                    property: 'percentage',
+                    operator: '>',
+                    value: 4
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Brands',
+        data: [
+            { name: 'Сектор1', y: 56 },
+            { name: 'Сектор2', y: 24 },
+            { name: 'Сектор3', y: 77 },
+            { name: 'Сектор4', y: 91 },
+            { name: 'Сектор5', y: 28 }
+        ]
+    }]
+});
+
+
+var chart = Highcharts.chart('container4', {
+
+    title: {
+        text: ''
+    },
+    credits: {
+        enabled: false
+    },
+
+    subtitle: {
+        text: ''
+    },
+    legend: {
+        enabled: false
+    },
+    tooltip: {
+        shared: true,
+        useHTML: true,
+        headerFormat: '<span style="font-size: 14px; color: #3e8ade;">{point.key}</span><br/>',
+        style: {
+
+            fontSize: '12px'
+        }
+    },
+
+    xAxis: {
+        categories: ['B772', 'B773', 'B774', 'B775', 'B776']
+    },
+    yAxis: {
+        title: {
+            text: null
+        }
+    },
+
+    series: [{
+        type: 'column',
+        showInLegend: false,
+        name: "Нислэг",
+        colorByPoint: true,
+        data: [29, 71, 106, 129, 144, ],
+        showInLegend: false
+    }]
+
+});
+</script>

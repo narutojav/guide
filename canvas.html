@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>rasterizeHTML.js example</title>
+    
+    <style>
+    #target {
+        width: 300px;
+        height: 200px;
+        background: blue;
+        color: #fff;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    button {
+        display: block;
+        height: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="target" style="">
+        <img src="ineg.png" alt=""> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque quis eleifend elit. Donec lectus sem, scelerisque sit amet facilisis quis, gravida a lacus. Nunc at lorem egestas, gravida lorem quis, pulvinar ante. Quisque id tempus libero. Mauris hendrerit nunc risus, ac laoreet lectus gravida et. Nam euismod magna ac enim posuere sagittis. Fusce at egestas enim, eu hendrerit enim.
+    </div>
+    <button onclick="takeScreenShot()">to image</button>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+    <script src="http://danml.com/js/download2.js"></script>
+    <script>
+    window.takeScreenShot = function() {
+        var w = 1000;
+        var h = 1000;
+        var testcanvas = document.createElement('canvas');
+        testcanvas.width = w * 2;
+        testcanvas.height = h * 2;
+        testcanvas.style.width = w + 'px';
+        testcanvas.style.height = h + 'px';
+        testcanvas.webkitImageSmoothingEnabled = false;
+        testcanvas.mozImageSmoothingEnabled = false;
+        testcanvas.imageSmoothingEnabled = false;
+        var context = testcanvas.getContext('2d');
+        context.scale(2, 2);
+
+        // Trying new way
+        html2canvas(document.getElementById("target"), {
+            canvas: testcanvas,
+            onrendered: function(canvas) {
+                document.body.appendChild(canvas);
+                var img = canvas.toDataURL("image/png");
+                download(img, "notimproved1", "image/png");
+            },
+            width: 320,
+            height: 220
+        });
+        // Old blurry way
+        html2canvas(document.getElementById("target"), {
+            onrendered: function(canvas) {
+                document.body.appendChild(canvas);
+                var img = canvas.toDataURL("image/png");
+                download(img, "original1", "image/png");
+            },
+            width: 320,
+            height: 220
+        });
+    }
+    </script>
+</body>
+
+</html>
